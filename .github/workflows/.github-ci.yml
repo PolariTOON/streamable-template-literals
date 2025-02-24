@@ -1,0 +1,12 @@
+on:
+  - push
+  - pull_request
+jobs:
+  test:
+    runs-on: ubuntu-22.04
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 18.20.4
+      - run: npm run test
